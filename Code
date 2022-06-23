@@ -1,302 +1,302 @@
 #include<iostream>
 using namespace std;
-int Correct_Answer(int & score)
-{	
-	cout<<"Correct :) "<<endl;
-	score+=100;
-	cout<<"Your current score is"<<score<<endl;
+int Correct_Answer(int& score)
+{
+	cout << "Correct :) " << endl;
+	score += 100;
+	cout << "Your current score is" << score << endl;
 	return score;
 }
-int Incorrect_Answer(int & score)
+int Incorrect_Answer(int& score)
 {
-	cout<<"Incorrect :("<<endl;
-	score-=50;
-	cout<<"Your current score is"<<score<<endl;
+	cout << "Incorrect :(" << endl;
+	score -= 50;
+	cout << "Your current score is" << score << endl;
 	return score;
 }
-int Score_Reset(int & score )
+int Score_Reset(int& score)
 {
-	score =0;
+	score = 0;
 	return score;
 }
 
-void Highscore(int & highscore , int & score  )
+void Highscore(int& highscore, int& score)
 {
-	if(highscore< score )
+	if (highscore < score)
 	{
-		highscore= score;
+		highscore = score;
 	}
 }
-void Record(int &highscore)
+void Record(int& highscore)
 {
-	cout<<"Your current HIGHSCORE :) is "<<highscore<<endl;
+	cout << "Your current HIGHSCORE :) is " << highscore << endl;
 }
 
-int main ()
-{  
-
-	int score=0,highscore=0;
-
-	char reply,answer,comp,cont,key,quit,clear; 
-	system("color 4A");
-
-	cout<<"\n\n\n\n";
-
-cout<<"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"<<endl;
-
-cout<<"                                 ? QUIZ GAME ?        "<<endl<<endl<<endl;
-
-cout<<"                            $ BECOME A MILLIONER $ "<<endl<<endl<<endl;
-
-cout<<"                      Are you ready to be a $ millioner $ ?  "<<endl<<endl<<endl;
-
-cout<<"             Press Y to begin the game ! OR ! Press N to close the game "<<endl<<endl<<endl;
-
-cout<<"$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"<<endl;
-cin>>reply;
-system("CLS");
-while(reply=='y'|| reply=='Y')
+int main()
 {
-	cout<<"\n\n\n\n";
-	cout<<"\n\n\n\n";
-cout<<"                      $ Press s to start the game :) "<<endl<<endl;
 
-cout<<"                      $ Press v to view the highest score ;) "<<endl<<endl;
+	int score = 0, highscore = 0;
 
-cout<<"                      $ Press r to reset the score :o "<<endl<<endl;
+	char reply, answer, comp, cont, key, quit, clear;
+	system("color 7C");
 
-cout<<"                      $ Press h if you need help :') "<<endl<<endl;
+	cout << "\n\n\n\n";
 
-cout<<"                      $ Press q to quit the game :( "<<endl<<endl;
+	cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$" << endl;
 
-cin>>key;
-system("CLS");
-switch(key)
-{
-case ('v'):
-{
-Record(highscore);
+	cout << "                                 ? QUIZ GAME ?        " << endl << endl << endl;
 
-cout<<" Press g to continue "<<endl;
-cin>>clear;
-if(clear=='g'){
-system("CLS");
+	cout << "                            $ BECOME A MILLIONER $ " << endl << endl << endl;
 
-break;
-}
+	cout << "                      Are you ready to be a $ millioner $ ?  " << endl << endl << endl;
 
-}
-case('r'):
-{
-Score_Reset(score );
-cout<<" Press g to continue "<<endl;
-cin>>clear;
-if(clear=='g'){
-system("CLS");
-break;
-}
-}
-case ('h'):{
+	cout << "             Press Y to begin the game ! OR ! Press N to close the game " << endl << endl << endl;
 
-cout<<"\n\n\n\n";
-	
-	cout<<" -In this game you must be ready to be asked 10 questions  "<<endl<<endl;
-cout<<" -Be sure to choose the right key for your answer "<<endl<<endl;
-cout<<" -Each right answer you will be awarded 100$"<<endl<<endl;
-cout<<" -Each wrong answer you will reduced 50$"<<endl<<endl;
-cout<<" -If you want to contact us please visit our website www.onlinegames.com "<<endl<<endl;
-cout<<" -We hope that this was helpful to you and good luck $ :)"<<endl<<endl;
-cout<<" -Press g to continue "<<endl<<endl;
-cin>>clear;
-if(clear=='g'){
-system("CLS");
-break;
-}
-		   }
-case('s'):{
-	cout<<"Press g to start"<<endl;
-	cin>>comp;
-	while(comp=='g' || comp=='G')//To have the break ability in the loop
-	{
-cout<<"1-In a ...... network , all devices are connected to a device called a hub and communicate through it ."<<endl<<endl;//the question consists of the main statment
-cout<<"a-Bus       b-Star "<<endl<<endl;//the choices
-cout<<"c-Ring      d-Mesh   "<<endl<<endl;
-cin>>answer;//entering the answer
-if(answer=='b'|| answer=='B' )
-{
-Correct_Answer(score);
-Highscore(highscore,score);
-
-}
-else{
-	Incorrect_Answer(score);
-	Highscore( highscore , score ) ;
-}
-
-cout<<"2-A ...... is two or more LANs connected together, generally across a large geographical area ."<<endl<<endl;
-cout<<"a-WAN      b-SAN "<<endl<<endl;
-cout<<"c-CAN      d-HAN"<<endl<<endl;
-cin>>answer;
-if(answer=='a' || answer=='A' )
-{
-Correct_Answer(score);
-
-}
-else{
-	Incorrect_Answer(score);
-	Highscore ( highscore , score ) ;
-}
-
-cout<<"3-A ...... network is the netwrok which nodes are arranged hierarchically."<<endl<<endl;
-cout<<"a-Star     b-Ring"<<endl<<endl;
-cout<<"c-Fully    d-Tree "<<endl<<endl;
-cin>>answer;
-if(answer=='d' || answer=='D' )
-{
-Correct_Answer(score);
-Highscore(highscore ,score  );
-	
-}
-else{
-	Incorrect_Answer(score);
-	Highscore(highscore , score) ;
-}
-
-
-cout<<"4- ...... are designed to make a machine or network resource unavailable to its intended users ?"<<endl<<endl;
-cout<<"a-Direct-access attacks               b-Denial-of-service attack"<<endl<<endl;
-cout<<"c-Eavesdropping                       d-Spoofing"<<endl<<endl;
-cin>>answer;
-if(answer=='b' || answer=='B' )
-{
-Correct_Answer(score);
-Highscore(highscore ,score  );
-	
-}
-else{
-	Incorrect_Answer(score);
-	Highscore( highscore , score ) ;
-}
-
-cout<<"5-Computer security is the protection of computer systems from the theft and damage to their ......"<<endl<<endl;
-cout<<"a-Hardware      b-Software"<<endl<<endl;
-cout<<"c-Information   d-a , b and c"<<endl<<endl;
-cin>>answer;
-if(answer=='d' || answer=='D' )
-{
-Correct_Answer(score);
-Highscore(highscore ,score  );
-	
-}
-else{
-	Incorrect_Answer(score);
-	Highscore( highscore , score );
-	
-}
-
-cout<<"6-Strong Artificial Intelligence is ......"<<endl<<endl;
-cout<<"a-the embodiment of human intellectual capabilities within a computer                      b-a set of computer programs that produce output that would be considered to reflect intelligence if it were generated by humans"<<endl<<endl;
-cout<<"c-the study of mental faculties through the use of mental models implemented on a computer d-all of the mentioned"<<endl<<endl;
-cin>>answer;
-if(answer=='a' || answer=='A' )
-{
-Correct_Answer(score);
-Highscore(highscore ,score  );
-	
-}
-else{
-	Incorrect_Answer(score);
-	Highscore ( highscore , score );
-	
-}
-
-cout<<"7-What is Artificial intelligence ?"<<endl<<endl;
-cout<<"a-Putting your intelligence into Computer   b-Programming with your own intelligence"<<endl<<endl;
-cout<<"c-Making a Machine intelligent              d-Playing a Game"<<endl<<endl;
-cin>>answer;
-if(answer=='c'|| answer=='C')
-{
-Correct_Answer(score);
-Highscore(highscore ,score  );
-
-}
-else{
-	Incorrect_Answer(score);
-	Highscore(highscore , score ) ;
-	
-}
-
-cout<<"8-...... is the application of engineering to the development of software in a systematic method"<<endl<<endl;
-cout<<"a-Software Engineering   b-Software process"<<endl<<endl;
-cout<<"c-Software quality       d-Software verification"<<endl<<endl;
-cin>>answer;
-if(answer=='a' || answer=='A' )
-{
-Correct_Answer(score);
-Highscore(highscore ,score  );
-	
-}
-else{
-	Incorrect_Answer(score);
-	Highscore (highscore , score );
+	cout << "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$" << endl;
+	cin >> reply;
 	system("CLS");
-}
+	while (reply == 'y' || reply == 'Y')
+	{
+		cout << "\n\n\n\n";
+		cout << "\n\n\n\n";
+		cout << "                      $ Press s to start the game :) " << endl << endl;
 
-cout<<"9-What is the process of finding a fault given a failure ?"<<endl<<endl;
-cout<<"a-Test Failure   b-Test Fault"<<endl<<endl;
-cout<<"c-Debugging      d-non of the previous"<<endl<<endl;
-cin>>answer;
-if(answer=='c' || answer=='C' )
-{
-Correct_Answer(score);
-Highscore(highscore ,score  );
+		cout << "                      $ Press v to view the highest score ;) " << endl << endl;
 
-}
-else{
-	Incorrect_Answer(score);
-	Highscore(highscore , score ) ; 
-system("CLS");
-}
+		cout << "                      $ Press r to reset the score :o " << endl << endl;
 
-cout<<"10-What is the most expensive computer type ?"<<endl<<endl;
-cout<<"a-Servers       b-Laptops"<<endl<<endl;
-cout<<"c-Smartphones   d-Desktop Computers"<<endl<<endl;
-cin>>answer;
-if(answer=='a' || answer=='A' )
-{
-Correct_Answer(score);
-Highscore(highscore ,score  );
+		cout << "                      $ Press h if you need help :') " << endl << endl;
 
-}
-else{
-	Incorrect_Answer(score);
-	Highscore(highscore , score ) ; 
-system("CLS");
-}
+		cout << "                      $ Press q to quit the game :( " << endl << endl;
+
+		cin >> key;
+		system("CLS");
+		switch (key)
+		{
+		case ('v'):
+		{
+			Record(highscore);
+
+			cout << " Press g to continue " << endl;
+			cin >> clear;
+			if (clear == 'g') {
+				system("CLS");
+
+				break;
+			}
+
+		}
+		case('r'):
+		{
+			Score_Reset(score);
+			cout << " Press g to continue " << endl;
+			cin >> clear;
+			if (clear == 'g') {
+				system("CLS");
+				break;
+			}
+		}
+		case ('h'): {
+
+			cout << "\n\n\n\n";
+
+			cout << " -In this game you must be ready to be asked 10 questions  " << endl << endl;
+			cout << " -Be sure to choose the right key for your answer " << endl << endl;
+			cout << " -Each right answer you will be awarded 100$" << endl << endl;
+			cout << " -Each wrong answer you will reduced 50$" << endl << endl;
+			cout << " -If you want to contact us please visit our website www.onlinegames.com " << endl << endl;
+			cout << " -We hope that this was helpful to you and good luck $ :)" << endl << endl;
+			cout << " -Press g to continue " << endl << endl;
+			cin >> clear;
+			if (clear == 'g') {
+				system("CLS");
+				break;
+			}
+		}
+		case('s'): {
+			cout << "Press g to start" << endl;
+			cin >> comp;
+			while (comp == 'g' || comp == 'G')//To have the break ability in the loop
+			{
+				cout << "1-In a ...... network , all devices are connected to a device called a hub and communicate through it ." << endl << endl;//the question consists of the main statment
+				cout << "a-Bus       b-Star " << endl << endl;//the choices
+				cout << "c-Ring      d-Mesh   " << endl << endl;
+				cin >> answer;//entering the answer
+				if (answer == 'b' || answer == 'B')
+				{
+					Correct_Answer(score);
+					Highscore(highscore, score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+				}
+
+				cout << "2-A ...... is two or more LANs connected together, generally across a large geographical area ." << endl << endl;
+				cout << "a-WAN      b-SAN " << endl << endl;
+				cout << "c-CAN      d-HAN" << endl << endl;
+				cin >> answer;
+				if (answer == 'a' || answer == 'A')
+				{
+					Correct_Answer(score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+				}
+
+				cout << "3-A ...... network is the netwrok which nodes are arranged hierarchically." << endl << endl;
+				cout << "a-Star     b-Ring" << endl << endl;
+				cout << "c-Fully    d-Tree " << endl << endl;
+				cin >> answer;
+				if (answer == 'd' || answer == 'D')
+				{
+					Correct_Answer(score);
+					Highscore(highscore, score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+				}
+
+
+				cout << "4- ...... are designed to make a machine or network resource unavailable to its intended users ?" << endl << endl;
+				cout << "a-Direct-access attacks               b-Denial-of-service attack" << endl << endl;
+				cout << "c-Eavesdropping                       d-Spoofing" << endl << endl;
+				cin >> answer;
+				if (answer == 'b' || answer == 'B')
+				{
+					Correct_Answer(score);
+					Highscore(highscore, score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+				}
+
+				cout << "5-Computer security is the protection of computer systems from the theft and damage to their ......" << endl << endl;
+				cout << "a-Hardware      b-Software" << endl << endl;
+				cout << "c-Information   d-a , b and c" << endl << endl;
+				cin >> answer;
+				if (answer == 'd' || answer == 'D')
+				{
+					Correct_Answer(score);
+					Highscore(highscore, score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+
+				}
+
+				cout << "6-Strong Artificial Intelligence is ......" << endl << endl;
+				cout << "a-the embodiment of human intellectual capabilities within a computer                      b-a set of computer programs that produce output that would be considered to reflect intelligence if it were generated by humans" << endl << endl;
+				cout << "c-the study of mental faculties through the use of mental models implemented on a computer d-all of the mentioned" << endl << endl;
+				cin >> answer;
+				if (answer == 'a' || answer == 'A')
+				{
+					Correct_Answer(score);
+					Highscore(highscore, score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+
+				}
+
+				cout << "7-What is Artificial intelligence ?" << endl << endl;
+				cout << "a-Putting your intelligence into Computer   b-Programming with your own intelligence" << endl << endl;
+				cout << "c-Making a Machine intelligent              d-Playing a Game" << endl << endl;
+				cin >> answer;
+				if (answer == 'c' || answer == 'C')
+				{
+					Correct_Answer(score);
+					Highscore(highscore, score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+
+				}
+
+				cout << "8-...... is the application of engineering to the development of software in a systematic method" << endl << endl;
+				cout << "a-Software Engineering   b-Software process" << endl << endl;
+				cout << "c-Software quality       d-Software verification" << endl << endl;
+				cin >> answer;
+				if (answer == 'a' || answer == 'A')
+				{
+					Correct_Answer(score);
+					Highscore(highscore, score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+					system("CLS");
+				}
+
+				cout << "9-What is the process of finding a fault given a failure ?" << endl << endl;
+				cout << "a-Test Failure   b-Test Fault" << endl << endl;
+				cout << "c-Debugging      d-non of the previous" << endl << endl;
+				cin >> answer;
+				if (answer == 'c' || answer == 'C')
+				{
+					Correct_Answer(score);
+					Highscore(highscore, score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+					system("CLS");
+				}
+
+				cout << "10-What is the most expensive computer type ?" << endl << endl;
+				cout << "a-Servers       b-Laptops" << endl << endl;
+				cout << "c-Smartphones   d-Desktop Computers" << endl << endl;
+				cin >> answer;
+				if (answer == 'a' || answer == 'A')
+				{
+					Correct_Answer(score);
+					Highscore(highscore, score);
+
+				}
+				else {
+					Incorrect_Answer(score);
+					Highscore(highscore, score);
+					system("CLS");
+				}
 
 
 
 
-break;
-}
+				break;
+			}
 
-case('q'):
-{
-cout<<"Are you sure you want to exit the game :( ?"<<endl<<endl<<endl;
-cout<<" Press Y for yes OR N for no "<<endl<<endl<<endl;
-cin>>quit;
-if(quit=='y' || quit=='Y')
-exit(0);
-else
-break;
-		
-}
+		case('q'):
+		{
+			cout << "Are you sure you want to exit the game :( ?" << endl << endl << endl;
+			cout << " Press Y for yes OR N for no " << endl << endl << endl;
+			cin >> quit;
+			if (quit == 'y' || quit == 'Y')
+				exit(0);
+			else
+				break;
 
-}
+		}
+
+		}
 
 
-}
-}
-system ("pause");
-return 0;
+		}
+	}
+	system("pause");
+	return 0;
 }
